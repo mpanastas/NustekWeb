@@ -110,6 +110,11 @@
 .login{
   color:#fff;
 }
+
+.login > h2{
+  font-size: 24px;
+  margin-bottom: 31px;
+}
 .masthead h1 {
   font-family: "Varela Round";
   font-size: 2.5rem;
