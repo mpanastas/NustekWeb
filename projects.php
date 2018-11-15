@@ -1,5 +1,6 @@
 <?php
 require 'api/db_config.php';
+require 'api/session.php';
 $result = true;
 $sql = "SELECT * FROM proyectos"; 
 $result = $mysqli->query($sql);
@@ -9,6 +10,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $sql = "INSERT INTO proyectos (titulo,fecha_inicio, fecha_termino, comentarios, contacto, correo_contacto, telefono_contacto) 
 	VALUES ('".$post['titulo']."','".$post['inicio']."','".$post['termino']."','".$post['comentarios']."','".$post['contacto']."','".$post['correo']."','".$post['telefono']."')";
   $result = $mysqli->query($sql);
+  if ($result){
+    header("Refresh:0");
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -37,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Custom styles for this template -->
   <link href="css/grayscale.min.css" rel="stylesheet">
 
-  <title>Log In Nustek</title>
+  <title>Proyectos | Nustek</title>
 </head>
 
 <body id="page-top">
@@ -64,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="nav-link js-scroll-trigger" href="index.html#signup">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="login.html">Cerrar Sesión</a>
+            <a class="nav-link js-scroll-trigger" href="api/logout.php">Cerrar sesión</a>
           </li>
         </ul>
       </div>
@@ -81,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="row">
                 <div class="col-lg-12 margin-tb">
                   <div class="pull-left">
-                    <h3 class="table"> Proyectos</h3>
+                    <h3 class="table">Hola <?php echo $user_check ?>, estas viendo: Proyectos</h3>
                   </div>
                   <div class="pull-right">
                     <button id="proyecto" type="button" class="btn btn-success" data-toggle="modal" data-target="#create-item">

@@ -1,6 +1,9 @@
 <?php
 require 'api/db_config.php';
 session_start();
+if(isset($_SESSION['login_user_mail'])){
+  header("location:projects.php");
+}
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $post = $_POST;
   $hashed_password = password_hash($post["contrasena"],PASSWORD_DEFAULT);
@@ -65,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <a class="nav-link js-scroll-trigger" href="index.html#signup">Contacto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="login.html">Iniciar Sesión</a>
+            <a class="nav-link js-scroll-trigger" href="login.php">Iniciar Sesión</a>
           </li>
         </ul>
       </div>
