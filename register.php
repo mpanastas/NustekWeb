@@ -1,5 +1,6 @@
 <?php
 require 'api/db_config.php';
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   $post = $_POST;
   $hashed_password = password_hash($post["contrasena"],PASSWORD_DEFAULT);
