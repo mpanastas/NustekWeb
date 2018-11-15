@@ -99,16 +99,28 @@
                             <div class="modal-content">
                               <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Create Item</h4>
+                                
                               </div>
                 
                 
                               <div class="modal-body">
                                       <form data-toggle="validator" action="api/create.php" method="POST">
-                
+                                        <h4 class="modal-title" id="myModalLabel">Crear Proyecto</h4>
                 
                                           <div class="form-group">
-                                            <label class="control-label" for="title">Title:</label>
+                                            <label class="control-label" for="title">Nombre:</label>
+                                            <input type="text" name="title" class="form-control" data-error="Please enter title." required />
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="control-label" for="title">Fecha Inicio:</label>
+                                            <input type="text" name="title" class="form-control" data-error="Please enter title." required />
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                
+                                        <div class="form-group">
+                                            <label class="control-label" for="title">Fecha de Termino:</label>
                                             <input type="text" name="title" class="form-control" data-error="Please enter title." required />
                                             <div class="help-block with-errors"></div>
                                         </div>
@@ -120,9 +132,15 @@
                                             <div class="help-block with-errors"></div>
                                         </div>
                 
-                
                                         <div class="form-group">
-                                            <button type="submit" class="btn crud-submit btn-success">Submit</button>
+                                            <label class="control-label" for="title">Id de Contacto:</label>
+                                            <input type="text" name="title" class="form-control" data-error="Please enter title." required />
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn crud-submit btn-success">Crear</button>
                                         </div>
                 
                 
